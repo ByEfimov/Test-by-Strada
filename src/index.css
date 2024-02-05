@@ -1,0 +1,181 @@
+html {
+  --PrimaryTextColor: #fff;
+  --SecondaryTextColor: #bdbdbd;
+  --PrimaryBackgroundColor: #18191e;
+  --SecondaryBackgroundColor: #1d1f2a;
+  --ThirdaryBackgroundColor: #3d3f48;
+  --FourBackgroundColor: #20182c;
+  --AccentBackgroundGradient: linear-gradient(91deg, #7728e1 0%, #700cf5 100%);
+  --AccentBorderColor: #700cf5;
+  --AccentBackgroundShadow: 0px 0px 10px 0px rgba(113, 13, 245, 0.1);
+
+  --ErrorBackgroundGradient: linear-gradient(94deg, #993a33 0%, #ad4c43 100%);
+  --TransparentColor: #60658320;
+
+  --PrimaryPaddingSize: 12px;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: var(--PrimaryBackgroundColor);
+  color: var(--PrimaryTextColor);
+  scroll-behavior: smooth;
+  * {
+    letter-spacing: 0.3px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+li::marker {
+  display: none;
+  opacity: 0 !important;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+@property --progress-valued {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes css-progress {
+  to {
+    --progress-valued: var(--progress-value);
+  }
+}
+.progress-bar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: var(--AccentBackgroundShadow);
+}
+
+progress {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.css {
+  background: radial-gradient(
+      closest-side,
+      var(--PrimaryBackgroundColor) 90%,
+      transparent 80% 100%,
+      var(--PrimaryBackgroundColor) 0
+    ),
+    conic-gradient(
+      var(--AccentBorderColor) calc(var(--progress-valued) * 1%),
+      var(--SecondaryBackgroundColor) 0
+    );
+  animation: css-progress 2s 1 forwards;
+}
+
+.css::before {
+  animation: css-progress 2s 1 forwards;
+}
